@@ -1,0 +1,24 @@
+<solver>
+    <scanAnnotatedClasses/>
+
+    <scoreDirectorFactory>
+        <easyScoreCalculatorClass>com.vasya.ScoreCalculator</easyScoreCalculatorClass>
+    </scoreDirectorFactory>
+
+    <termination>
+        <secondsSpentLimit>30</secondsSpentLimit>
+    </termination>
+
+    <localSearch>
+        <changeMoveSelector>
+            <selectionOrder>ORIGINAL</selectionOrder>
+        </changeMoveSelector>
+
+        <acceptor>
+            <acceptorType>HILL_CLIMBING</acceptorType>
+        </acceptor>
+        <forager>
+            <pickEarlyType>FIRST_LAST_STEP_SCORE_IMPROVING</pickEarlyType>
+        </forager>
+    </localSearch>
+</solver>

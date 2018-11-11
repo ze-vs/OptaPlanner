@@ -10,9 +10,7 @@ public class ScoreCalculator implements EasyScoreCalculator<Schedule> {
     public static final Integer LINE_TWO_LOAD = 526;
     public static final Integer LINE_THREE_LOAD = 3384;
 
-
     public Score calculateScore(Schedule schedule) {
-
         Integer hardsCore = 0;
         Integer lineOneLoad = 0;
         Integer lineTwoLoad = 0;

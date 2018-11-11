@@ -11,7 +11,8 @@ public class ScoreCalculator implements EasyScoreCalculator<Schedule> {
     public static final Integer LINE_THREE_LOAD = 3384;
 
     public Score calculateScore(Schedule schedule) {
-        Integer hardsCore = 0;
+        //счёт
+        Integer hardScore = 0;
         Integer lineOneLoad = 0;
         Integer lineTwoLoad = 0;
         Integer lineThreeLoad = 0;
@@ -28,14 +29,16 @@ public class ScoreCalculator implements EasyScoreCalculator<Schedule> {
             }
         }
 
+        //лучшее решение
         if (lineOneLoad >= LINE_ONE_LOAD && lineThreeLoad >= LINE_THREE_LOAD && lineTwoLoad >= LINE_TWO_LOAD) {
-            hardsCore += 1000;
+            hardScore += 10000;
         }
 
-        hardsCore += Math.abs(LINE_ONE_LOAD - lineOneLoad) * -100;
-        hardsCore += Math.abs(LINE_TWO_LOAD - lineTwoLoad) * -10;
-        hardsCore += Math.abs(LINE_THREE_LOAD - lineThreeLoad) * -1;
+        //выставляем счёт равный модулю разности необходимого значиния линии и текущего и умножаем на приоритет
+        hardScore += Math.abs(LINE_ONE_LOAD - lineOneLoad) * -100;
+        hardScore += Math.abs(LINE_TWO_LOAD - lineTwoLoad) * -10;
+        hardScore += Math.abs(LINE_THREE_LOAD - lineThreeLoad) * -1;
 
-        return HardSoftScore.valueOf(hardsCore, 0);
+        return HardSoftScore.valueOf(hardScore, 0);
     }
 }

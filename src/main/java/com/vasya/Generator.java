@@ -5,7 +5,15 @@ import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 
+/**
+ * генерируем значения
+ */
+
 public class Generator {
+    /**
+     * список линий
+     * @return
+     */
     public List<Integer> generateLine() {
         List<Integer> lines = new ArrayList<Integer>();
         lines.add(1);
@@ -14,6 +22,11 @@ public class Generator {
         return lines;
     }
 
+    /**
+     * генерирует операторов с заданным сдвигом
+     * @param shift - сдвиг (нагрузка относительно 50)
+     * @return
+     */
     public List<Operator> innerGenerateOperators(int shift) {
         List<Operator> operators = new ArrayList<Operator>();
         for (int i = 0; i < 100; i++) {
@@ -27,6 +40,12 @@ public class Generator {
         }
         return operators;
     }
+
+    /**
+     * генерирует операторов с заданным сдвигом и с нагрузкой равной или выше минимально необходимой
+     * @param shift - сдвиг
+     * @return
+     */
 
     public List<Operator> generateOperators(int shift) {
         List<Operator> operators;
@@ -42,11 +61,15 @@ public class Generator {
         return operators;
     }
 
-    public List<Integer> generateLoad() {
+    /**
+     *
+     * @return
+     */
+/*    public List<Integer> generateLoad() {
         List<Integer> loadList = new ArrayList<Integer>();
         for (int i = 50; i < 101; i++) {
             loadList.add(i);
         }
         return loadList;
-    }
+    }*/
 }

@@ -17,7 +17,7 @@ public class Main {
         unsolvedCourseSchedule.getLinesList().addAll(generator.generateLine());
         /*unsolvedCourseSchedule.getOperators().addAll(generator.generateOperators(90));*/
         unsolvedCourseSchedule.getOperators().addAll(generator.innerGenerateOperators(50));
-        unsolvedCourseSchedule.getLoadsList().addAll(generator.generateLoad());
+        //unsolvedCourseSchedule.getLoadsList().addAll(generator.generateLoad());
 
         SolverFactory<Schedule> solverFactory = SolverFactory.createFromXmlResource("scheduleSolverConfiguration.xml");
         Solver<Schedule> solver = solverFactory.buildSolver();

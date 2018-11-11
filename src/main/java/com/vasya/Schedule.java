@@ -6,16 +6,18 @@ import org.optaplanner.core.api.domain.solution.PlanningSolution;
 import org.optaplanner.core.api.domain.solution.drools.ProblemFactCollectionProperty;
 import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
 import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
-//рещение , потом создаётся список решений
+//рещение , потом создаётся список решений и используем лучшее
+/**
+ * решение
+ */
 @PlanningSolution
 public class Schedule {
 
-    Logger logger = LoggerFactory.getLogger(getClass());
+    //Logger logger = LoggerFactory.getLogger(getClass());
+
 
     private HardSoftScore score;
 

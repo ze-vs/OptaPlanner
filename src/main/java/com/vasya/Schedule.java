@@ -36,9 +36,9 @@ public class Schedule {
         return operators;
     }
 
-
+//из чего выбираем
     @ValueRangeProvider(id = "availableLine")
-    @ProblemFactCollectionProperty
+    //@ProblemFactCollectionProperty
     public List<Integer> getLinesList() {
         return lines;
     }
@@ -62,6 +62,8 @@ public class Schedule {
         for (Operator operator : getOperators()){
             result+="\n Operator id:"+ operator.getId()+ " load:"+ operator.getLoad()+" line:" + operator.getLine();
         }
+        result+="\n" + score.getHardScore();
         return result;
     }
+
 }

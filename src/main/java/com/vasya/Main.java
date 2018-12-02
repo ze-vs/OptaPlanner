@@ -24,6 +24,7 @@ public class Main {
         Schedule solvedCourseSchedule = solver.solve(unsolvedCourseSchedule);
         System.out.println(solvedCourseSchedule.toString());
         overLack(solvedCourseSchedule.getOperators());
+        System.out.println("asd");
     }
 
     public static void overLack(List<Operator> operators) {

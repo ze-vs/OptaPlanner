@@ -25,6 +25,7 @@ public class Main {
         System.out.println(solvedCourseSchedule.toString());
         overLack(solvedCourseSchedule.getOperators());
         System.out.println("test");
+        System.out.println("task1");
 
     }
 
